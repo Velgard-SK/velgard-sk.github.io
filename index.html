@@ -261,6 +261,12 @@ section::after{content:"";position:absolute;top:-1px;left:50%;width:280px;height
 .cc{position:relative}
 .cc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--proof));transform:scaleX(0);transition:transform .4s}
 .cc:hover::before{transform:scaleX(1)}
+/* mobile stability */
+html,body{overflow-x:hidden}
+.console .body .p{min-width:11ch}
+.ctw{display:grid;flex:1;min-width:0}.ctw>*{grid-area:1/1}.gh{visibility:hidden}
+.st-c{min-width:92px;text-align:center}
+@media (max-width:560px){.console .body{flex-direction:column;gap:6px}.hero::after{animation:none}}
 /* footer */
 .scanline{position:fixed;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,200,212,.6),rgba(43,209,142,.6),transparent);animation:scan 9s linear infinite;pointer-events:none;z-index:40}
 @keyframes scan{0%{top:0;opacity:0}5%{opacity:1}95%{opacity:1}100%{top:100%;opacity:0}}
@@ -379,7 +385,7 @@ footer{border-top:.5px solid var(--line);padding:32px 0}
 </div>
 <div class="console">
 <div class="top"><span>VG-0142 · portal.example.eu</span><span class="live">LIVE</span></div>
-<div class="body"><span class="p" id="cStep">DETECT</span><span id="cText"></span></div>
+<div class="body"><span class="p" id="cStep">DETECT</span><span class="ctw"><span class="gh">New service version found on portal.example.eu_</span><span class="gh">Known weakness likely present · confidence: high_</span><span class="gh">Read-only check inside scope · confirmed_</span><span class="gh">Assigned to IT infrastructure · ticket linked_</span><span class="gh">Retest passed · proof stored in audit trail_</span><span id="cText"></span></span></div>
 <div class="bar2"><i id="cBar"></i></div>
 </div>
 <div class="again"><svg viewBox="0 0 14 14" fill="none"><path d="M12 7a5 5 0 1 1-1.5-3.5M12 2v2.5H9.5" stroke="#00C8D4" stroke-width="1.2"></path></svg>Then it starts again — every day</div>
